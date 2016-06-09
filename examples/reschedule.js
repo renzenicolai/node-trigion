@@ -1,8 +1,10 @@
 var Trigion = require('..');
 
+if( process.argv.length != 4 ) return console.error('usage:', 'node', require('path').basename(__filename), 'username', 'password');
+
 var t = new Trigion({
-	username: process.argv[2] || 'stefan@athom.nl',
-	password: process.argv[3] || 'acediaacedia123'
+	username: process.argv[2],
+	password: process.argv[3]
 })
 
 t.login(function( err, result ){
